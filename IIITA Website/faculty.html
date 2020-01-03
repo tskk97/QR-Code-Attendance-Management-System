@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dr.Shirshu Verma</title>
+  <link rel="stylesheet" type="text/css" href="css/faculty.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style>
+  body {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+}
+  </style>
+</head>
+
+<body class="faculty-page" onload="startTime()">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+				<h1 style="float:right;">IIIT Allahabad - Attendance Management System</h1>
+					<div class="brand">
+						<img src="img/logo.jpg" alt="logo" style="float:left;"/>
+					</div>
+					
+					<hr> <br>
+					
+					
+					<p style="float:right"><span id="datetime"></span></p><br>
+					
+					<script>
+					var dt = new Date();
+					document.getElementById("datetime").innerHTML = dt.toLocaleString();
+					</script>
+<!div id="txt"><!/div>
+
+					<div id="qrcode" style="float:right;"></div>
+
+<!-- Load an icon library -->					
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">				
+
+<!-- Side navigation -->
+<div class="sidenav">
+<hr>
+<br><br><br>
+  <a href="#home" onClick="window.location.reload()"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#graduation-cap"><i class="fa fa-fw fa-graduation-cap"></i> Teaching</a>
+  <a href="img/attendance1.pdf" target="_blank"><i class="fa fa-fw fa-file"></i> Attendance</a>
+  <a href="#pencil"><i class="fa fa-fw fa-pencil"></i> Classes</a>
+  <a href="#phone"><i class="fa fa-fw fa-phone"></i> Contact</a><br>
+  <a href="index.html"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+  
+</div>
+					
+					
+					
+					<div>
+						<h2 style="margin-left: -19.8em">Dr. Shirshu Verma</h2>
+					</div>
+					
+					<div>
+						<img src="img/faculty.jpg" height="200" width="240" border="1" style="margin-left: -38.5em"/>
+						<div id="qrcode" class="split right" style="float:middle;"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+<div>
+
+
+		<p><!Text to embed in QR Code</p>
+		<p><!textarea name="txt" style="height:50px;width:350px;" required="required"></textarea></p>
+		<p style="margin-left: -27.2em">Subject (Code): <select style="font-size:17px;" name="subject" required="required"> 
+		<!p style="margin-left: -20em;"><!Subject (Code): <!select name="subject" required="required"> 
+
+			<option value="Wireless Sensor Network (IMWS630E)" selected>Wireless Sensor Network (IMWS630E)</option>
+			<option value="Subject 2">Subject 2</option>
+			<option value="Subject 3">Subject 3</option>
+			<option value="Subject 4">Subject 4</option>
+		</select></p>
+		
+
+		<p style="margin-left: -44em">No. of Hours: <select style="font-size:17px;" name="subject" required="required"> 
+			<option value=" 1 " selected> 1 </option>
+			<option value=" 2 "> 2 </option>
+		</select></p>
+		<br>
+		
+		<input type="button" value="Generate QR" onclick="showImage();" style="margin-left: -52em" style="float:left;"/>
+		<!p><!input type="submit" value="Generator QR Code" id="qr-gn"><!/p>
+
+		<!p style="margin-left: -60.3em"><!Enter Pin: <textarea id="hiddenfield" name="txt" style="height:10px;width:150px;" required="required"><!/textarea><!/p>
+		
+		<!p style="margin-left: -63.7em"><!Image Size : <select name="size">
+			<!option value="100x100"><!100x100<!/option>
+			<!option value="200x200"><!200x200<!/option>
+			<!option value="300x300" selected><!300x300<!/option>
+			<!option value="400x400"><!400x400<!/option>
+			<!option value="500x500"><!500x500<!/option>
+			<!option value="600x600"><!600x600<!/option>
+			<!option value="700x700"><!700x700<!/option>
+			<!option value="800x800"><!800x800<!/option>
+		<!/select><!/p>
+		<!p style="margin-left: -60em"><!input type="submit" value="Generator QR Code" id="qr-gn"><!/p>
+		
+
+</div>
+
+ <script type="text/javascript">
+<!--
+    function showImage(){
+        document.getElementById('loadingImage').style.visibility="visible";
+    }
+
+    -->
+    </script>
+
+
+<img id="loadingImage" src="img/qrcode.jpg" style="visibility:hidden" height="450" width="450" border="1" align="middle"/><br><br>
+
+
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+
+
+<br/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script class="split right">
+
+
+  $(function(){
+       $("#qr-gn").click(function(){
+       	   $("#qrcode").html("");
+           var txt = $.trim($('textarea[name="txt"]').val());
+           if(txt == '') {
+       	   	 alert("Please enter the pin to generate QR Code");
+       	   	 return false;
+       	   }
+           var size = $('select[name="size"]').val();
+           var sizeSplit = size.split('x');
+           var width = sizeSplit[0];
+           var height = sizeSplit[1];
+           generateQRcode(width, height, txt );
+           return false;
+       });
+      
+	  function generateQRcode(width, height, text) {
+	  	 $('#qrcode').qrcode({width: width,height: height,text: text});
+	  	 
+	  }
+      
+  });
+
+  
+</script>
+
+</body>
+</html>

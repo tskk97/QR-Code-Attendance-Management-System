@@ -1,0 +1,132 @@
+html,body {
+	height: 100%;
+}
+
+body.faculty-page {
+	background-color: #f7f9fb;
+	font-size: 18px;
+}
+
+.faculty-page .brand {
+	width: 130px;
+	height: 130px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 30px auto;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 1;
+}
+
+.faculty-page .brand img {
+	width: 100%;
+}
+
+.faculty-page .card-wrapper h1{
+	font-size: 50px;
+	margin: 50px auto;
+	width: 1300px;
+}
+
+.faculty-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.faculty-page .card.fat {
+	padding: 10px;
+}
+
+.faculty-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+.faculty-page .form-control {
+	border-width: 2.3px;
+}
+
+.faculty-page .form-group label {
+	width: 100%;
+}
+
+.faculty-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.faculty-page .footer {
+	margin: 40px 0;
+	color: #888;
+	text-align: center;
+}
+
+
+
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 230px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #0E8E8A; /* Green */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 179px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 7px 28px 20px 30px;
+  text-decoration: none;
+  text-align:left;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FEFEFE;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+  text-decoration: underline;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 425px) {
+	.faculty-page .card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.faculty-page .card.fat {
+		padding: 0;
+	}
+
+	.faculty-page .card.fat .card-body {
+		padding: 15px;
+	}
+}

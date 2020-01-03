@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>IIITA Faculty - Login</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/logo.jpg" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">IIITA Faculty - Login</h4>
+							<form method="POST" class="my-login-validation" novalidate="">
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="invalid-feedback">
+										E-mail is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password
+										<a href="forgot.html" class="float-right">
+											<font color="#0E8E8A">Forgot Password?</font>
+										</a>
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+
+								<!div class="form-group">
+									<!div class="custom-checkbox custom-control">
+										<!input type="checkbox" name="remember" id="remember" class="custom-control-input">
+										<!label for="remember" class="custom-control-label"><!Remeber Me</label>
+									<!/div>
+								<!/div>
+
+								<div class="form-group m-0">
+									<button id="myButton" type="submit" class="btn btn-primary btn-block" onclick="myfunction()" value="Login">
+										Login
+									</button>
+								</div>
+								<script language="javascript">
+								document.getElementById("myButton").onclick = function () 
+								{
+        								location.href = "faculty.html";
+    								};
+								function myfunction() /*function to check email & password*/
+								{
+ 										/*the following code checkes whether the entered userid and password are matching*/
+ 									if(form.email.value == "user1@gmail.com" && form.password.value == "pass1")
+  									{
+    										//window.open('faculty.html')/*opens the target page while Id & password matches*/
+    										location.href = "faculty.html";
+  									}
+ 									else
+ 									{
+   										alert("Wrong Username or Password, Try Again")/*displays error message*/
+  									}  												
+								}
+									
+								</script>
+								<div class="mt-4 text-center">
+									Don't have an account? <a href="register.html"><font color="#0E8E8A">Create One</font></a>
+								</div>
+							</form>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>
